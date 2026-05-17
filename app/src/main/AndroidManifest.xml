@@ -87,7 +87,7 @@
 
             <meta-data
                 android:name="android.support.customtabs.trusted.DISPLAY_MODE"
-                android:value="sticky-immersive" />
+                android:value="standalone" />
 
 
             <meta-data
