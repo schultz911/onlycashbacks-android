@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="enableNotification">true</bool>
+    <color name="backgroundColor">#F5F5F7</color>
+    <color name="colorPrimary">#F5F5F7</color>
+    <color name="colorPrimaryDark">#111827</color>
+    <color name="navigationColor">#F5F5F7</color>
+    <color name="navigationColorDark">#111827</color>
+    <color name="navigationDividerColor">#00000000</color>
+    <color name="navigationDividerColorDark">#00000000</color>
+    <integer name="splashScreenFadeOutDuration">300</integer>
+    <string name="appName" translatable="false">OnlyCashbacks</string>
+    <string name="fallbackType" translatable="false">customtabs</string>
+    <string name="generatorApp" translatable="false">bubblewrap-cli</string>
+    <string name="hostName" translatable="false">onlycashbacks.in</string>
+    <string name="launchUrl" translatable="false">https://onlycashbacks.in/</string>
+    <string name="launcherName" translatable="false">OnlyCBs</string>
+    <string name="orientation" translatable="false">portrait-primary</string>
+    <string name="providerAuthority" translatable="false">in.onlycashbacks.twa.fileprovider</string>
+    <string name="webManifestUrl" translatable="false">https://onlycashbacks.in/manifest.json</string>
+</resources>
