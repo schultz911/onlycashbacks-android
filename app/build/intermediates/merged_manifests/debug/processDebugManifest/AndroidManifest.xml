@@ -23,13 +23,14 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="in.onlycashbacks.twa"
-    android:versionCode="1"
-    android:versionName="1.0.0" >
+    android:versionCode="4"
+    android:versionName="4" >
 
     <uses-sdk
         android:minSdkVersion="26"
-        android:targetSdkVersion="37" />
+        android:targetSdkVersion="35" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <queries>
@@ -50,6 +51,7 @@
 
     <application
         android:name="in.onlycashbacks.twa.Application"
+        android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:extractNativeLibs="false"
@@ -104,10 +106,10 @@
                 android:name="android.support.customtabs.trusted.NAVIGATION_BAR_COLOR_DARK"
                 android:resource="@color/navigationColorDark" />
             <meta-data
-                android:name="androidx.browser.trusted.NAVIGATION_BAR_DIVIDER_COLOR"
+                android:name="androix.browser.trusted.NAVIGATION_BAR_DIVIDER_COLOR"
                 android:resource="@color/navigationDividerColor" />
             <meta-data
-                android:name="androidx.browser.trusted.NAVIGATION_BAR_DIVIDER_COLOR_DARK"
+                android:name="androix.browser.trusted.NAVIGATION_BAR_DIVIDER_COLOR_DARK"
                 android:resource="@color/navigationDividerColorDark" />
             <meta-data
                 android:name="android.support.customtabs.trusted.SPLASH_IMAGE_DRAWABLE"
@@ -130,6 +132,9 @@
             <meta-data
                 android:name="android.support.customtabs.trusted.SCREEN_ORIENTATION"
                 android:value="@string/orientation" />
+            <meta-data
+                android:name="android.support.customtabs.trusted.ADDITIONAL_TRUSTED_ORIGINS"
+                android:resource="@array/additional_trusted_origins" />
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -144,6 +149,16 @@
 
                 <data
                     android:host="@string/hostName"
+                    android:scheme="https" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true" >
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="onlycashbacks.in"
                     android:scheme="https" />
             </intent-filter>
         </activity>

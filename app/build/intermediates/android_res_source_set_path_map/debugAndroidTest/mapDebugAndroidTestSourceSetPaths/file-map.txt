@@ -1,6 +1,0 @@
-in.onlycashbacks.twa.test.app-androidTest-0 C:\onlycashbacks-android\app\build\generated\res\resValues\androidTest\debug
-in.onlycashbacks.twa.test.app-updated_navigation_xml-1 C:\onlycashbacks-android\app\build\generated\updated_navigation_xml\debugAndroidTest
-in.onlycashbacks.twa.test.app-mergeDebugAndroidTestResources-2 C:\onlycashbacks-android\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-in.onlycashbacks.twa.test.app-mergeDebugAndroidTestResources-3 C:\onlycashbacks-android\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-in.onlycashbacks.twa.test.app-debugAndroidTest-4 C:\onlycashbacks-android\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
-gradleHome-0 C:\Users\Admin\.gradle

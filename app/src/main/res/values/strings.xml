@@ -16,6 +16,12 @@
 -->
 <resources>
   
+    <string-array name="additional_trusted_origins">
+    
+      <item>https://onlycashbacks.in</item>
+    
+    </string-array>
+  
 
   <!--
     The "fullscreen" and "fullscreen-sticky" TWA manifest values correspond to "immersive" and "sticky-immersive"
@@ -34,9 +40,17 @@
         \"relation\": [\"delegate_permission/common.handle_all_urls\"],
         \"target\": {
             \"namespace\": \"web\",
-            \"site\": \"https://onlycashbacks.in\"
+            \"site\": \"https://www.onlycashbacks.in\"
         }
     }]
+    
+      ,[{
+          \"relation\": [\"delegate_permission/common.handle_all_urls\"],
+          \"target\": {
+              \"namespace\": \"web\",
+              \"site\": \"https://onlycashbacks.in\"
+          }
+      }]        
     
   </string>  
 </resources>

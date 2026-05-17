@@ -1,6 +1,6 @@
 {
   "packageId": "in.onlycashbacks.twa",
-  "host": "onlycashbacks.in",
+  "host": "www.onlycashbacks.in",
   "name": "OnlyCashbacks",
   "launcherName": "OnlyCBs",
   "display": "standalone",
@@ -8,24 +8,24 @@
   "themeColorDark": "#111827",
   "navigationColor": "#F5F5F7",
   "navigationColorDark": "#111827",
-  "navigationDividerColor": "#00000000",
-  "navigationDividerColorDark": "#00000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
   "backgroundColor": "#F5F5F7",
   "enableNotifications": true,
   "startUrl": "/",
-  "iconUrl": "https://onlycashbacks.in/favicon.svg",
-  "maskableIconUrl": "https://onlycashbacks.in/favicon.svg",
-  "monochromeIconUrl": "https://onlycashbacks.in/favicon.svg",
+  "iconUrl": "https://www.onlycashbacks.in/favicon.svg",
+  "maskableIconUrl": "https://www.onlycashbacks.in/favicon.svg",
+  "monochromeIconUrl": "https://www.onlycashbacks.in/favicon.svg",
   "splashScreenFadeOutDuration": 300,
   "signingKey": {
     "path": "C:\\onlycashbacks-android\\android.keystore",
     "alias": "android"
   },
-  "appVersionName": "1.0.0",
-  "appVersionCode": 1,
+  "appVersionName": "4",
+  "appVersionCode": 4,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
-  "webManifestUrl": "https://onlycashbacks.in/manifest.json",
+  "webManifestUrl": "https://www.onlycashbacks.in/manifest.json",
   "fallbackType": "webview",
   "features": {},
   "alphaDependencies": {
@@ -34,7 +34,7 @@
   "enableSiteSettingsShortcut": true,
   "isChromeOSOnly": false,
   "isMetaQuest": false,
-  "fullScopeUrl": "https://onlycashbacks.in/",
+  "fullScopeUrl": "https://www.onlycashbacks.in/",
   "minSdkVersion": 26,
   "orientation": "portrait-primary",
   "fingerprints": [
@@ -42,11 +42,13 @@
       "sha256": "13:AD:C4:31:C2:B5:2D:C7:60:EB:43:B2:47:94:C7:23:89:D1:FC:CA:6F:98:06:FC:B2:94:59:49:A2:8E:89:3D"
     }
   ],
-  "additionalTrustedOrigins": [],
+  "additionalTrustedOrigins": [
+    "onlycashbacks.in"
+  ],
   "retainedBundles": [],
   "protocolHandlers": [],
   "fileHandlers": [],
   "launchHandlerClientMode": "",
   "displayOverride": [],
-  "appVersion": "1"
+  "appVersion": "4"
 }
