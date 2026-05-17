@@ -3,7 +3,7 @@
   "host": "www.onlycashbacks.in",
   "name": "OnlyCashbacks",
   "launcherName": "OnlyCBs",
-  "display": "standalone",
+  "display": "fullscreen",
   "themeColor": "#F5F5F7",
   "themeColorDark": "#111827",
   "navigationColor": "#F5F5F7",
