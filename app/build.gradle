@@ -19,7 +19,6 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias libs.plugins.android.application
-    alias libs.plugins.jetbrains.kotlin.android
 }
 
 def twaManifest = [
@@ -70,13 +69,14 @@ def twaManifest = [
     namespace = "in.onlycashbacks.twa"
     buildFeatures {
         buildConfig true
+        resValues true
     }
     defaultConfig {
         applicationId "in.onlycashbacks.twa"
         minSdk = 26
         targetSdk = 37
         versionCode 1
-        versionName "1.0.9"
+        versionName "1.0.10"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
@@ -235,4 +235,9 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+}
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
