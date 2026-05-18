@@ -15,9 +15,11 @@
  */
 
 import groovy.xml.MarkupBuilder
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    id 'com.android.application'
+    alias libs.plugins.android.application
+    alias libs.plugins.jetbrains.kotlin.android
 }
 
 def twaManifest = [
@@ -39,7 +41,20 @@ def twaManifest = [
     // - short_name: Shorter string used if |name| is too long.
     // - url: Absolute path of the URL to launch the app with (e.g '/create').
     // - icon: Name of the resource in the drawable folder to use as an icon.
-    shortcuts: [],
+    shortcuts: [
+        [
+            name: 'Home',
+            short_name: 'Home',
+            url: '/',
+            icon: 'shortcut_icon'
+        ],
+        [
+            name: 'Offers',
+            short_name: 'Offers',
+            url: '/offers',
+            icon: 'shortcut_icon'
+        ]
+    ],
     // The duration of fade out animation in milliseconds to be played when removing splash screen.
     splashScreenFadeOutDuration: 300,
     generatorApp: 'bubblewrap-cli', // Application that generated the Android Project
@@ -50,13 +65,16 @@ def twaManifest = [
     orientation: 'portrait-primary',
 ]
 
-android {
-    compileSdkVersion 36
+    android {
+    compileSdk = 37
     namespace = "in.onlycashbacks.twa"
+    buildFeatures {
+        buildConfig true
+    }
     defaultConfig {
         applicationId "in.onlycashbacks.twa"
-        minSdkVersion 26
-        targetSdkVersion 35
+        minSdk = 26
+        targetSdk = 37
         versionCode 4
         versionName "4"
 
@@ -81,10 +99,7 @@ android {
 
         
             // This is used by Meta Quest.
-            resValue "string", "fullScopeUrl", 'https://www.onlycashbacks.in/'
-        
 
-        
 
         // The hostname is used when building the intent-filter, so the TWA is able to
         // handle Intents to open host url of the application.
@@ -145,7 +160,6 @@ android {
 
         resValue "string", "fallbackType", twaManifest.fallbackType
 
-        resValue "bool", "enableSiteSettingsShortcut", twaManifest.enableSiteSettingsShortcut
         resValue "string", "orientation", twaManifest.orientation
 
         
@@ -153,18 +167,24 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            shrinkResources = true
         }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlin {
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_1_8
+        }
+    }
     lint {
-        checkReleaseBuilds false
+        checkReleaseBuilds = false
     }
 }
 
-task generateShorcutsFile {
+tasks.register('generateShorcutsFile') {
     assert twaManifest.shortcuts.size() < 5, "You can have at most 4 shortcuts."
     twaManifest.shortcuts.eachWithIndex { s, i ->
         assert s.name != null, 'Missing `name` in shortcut #' + i
@@ -179,23 +199,23 @@ task generateShorcutsFile {
     def xmlMarkup = new MarkupBuilder(new IndentPrinter(xmlWriter, "    ", true))
 
     xmlMarkup
-        .'shortcuts'('xmlns:android': 'http://schemas.android.com/apk/res/android') {
-            twaManifest.shortcuts.eachWithIndex { s, i ->
-                'shortcut'(
-                        'android:shortcutId': 'shortcut' + i,
-                        'android:enabled': 'true',
-                        'android:icon': '@drawable/' + s.icon,
-                        'android:shortcutShortLabel': '@string/shortcut_short_name_' + i,
-                        'android:shortcutLongLabel': '@string/shortcut_name_' + i) {
-                    'intent'(
-                            'android:action': 'android.intent.action.MAIN',
-                            'android:targetPackage': twaManifest.applicationId,
-                            'android:targetClass': twaManifest.applicationId + '.LauncherActivity',
-                            'android:data': s.url)
-                    'categories'('android:name': 'android.intent.category.LAUNCHER')
+            .'shortcuts'('xmlns:android': 'http://schemas.android.com/apk/res/android') {
+                twaManifest.shortcuts.eachWithIndex { s, i ->
+                    'shortcut'(
+                            'android:shortcutId': 'shortcut' + i,
+                            'android:enabled': 'true',
+                            'android:icon': '@drawable/' + s.icon,
+                            'android:shortcutShortLabel': '@string/shortcut_short_name_' + i,
+                            'android:shortcutLongLabel': '@string/shortcut_name_' + i) {
+                        'intent'(
+                                'android:action': 'android.intent.action.MAIN',
+                                'android:targetPackage': twaManifest.applicationId,
+                                'android:targetClass': twaManifest.applicationId + '.LauncherActivity',
+                                'android:data': s.url)
+                        'categories'('android:name': 'android.intent.category.LAUNCHER')
+                    }
                 }
             }
-        }
     shortcutsFile.text = xmlWriter.toString() + '\n'
 }
 
@@ -207,7 +227,12 @@ repositories {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    
-        implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.6.2'
-    
+    implementation libs.androidbrowserhelper
+    implementation libs.kotlin.stdlib
+    implementation libs.core.ktx
+    implementation libs.timber
+
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
 }

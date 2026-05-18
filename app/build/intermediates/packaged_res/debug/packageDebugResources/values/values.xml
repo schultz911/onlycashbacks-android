@@ -6,7 +6,6 @@
     
     </string-array>
     <bool name="enableNotification">true</bool>
-    <bool name="enableSiteSettingsShortcut">true</bool>
     <color name="backgroundColor">#F5F5F7</color>
     <color name="colorPrimary">#F5F5F7</color>
     <color name="colorPrimaryDark">#111827</color>
@@ -14,7 +13,6 @@
     <color name="navigationColorDark">#111827</color>
     <color name="navigationDividerColor">#000000</color>
     <color name="navigationDividerColorDark">#000000</color>
-    <color name="shortcut_background">#F5F5F5</color>
     <integer name="splashScreenFadeOutDuration">300</integer>
     <string name="appName" translatable="false">OnlyCashbacks</string>
     <string name="assetStatements">
@@ -36,12 +34,21 @@
     
   </string>
     <string name="fallbackType" translatable="false">webview</string>
-    <string name="fullScopeUrl" translatable="false">https://www.onlycashbacks.in/</string>
     <string name="generatorApp" translatable="false">bubblewrap-cli</string>
     <string name="hostName" translatable="false">www.onlycashbacks.in</string>
     <string name="launchUrl" translatable="false">https://www.onlycashbacks.in/</string>
     <string name="launcherName" translatable="false">OnlyCBs</string>
     <string name="orientation" translatable="false">portrait-primary</string>
     <string name="providerAuthority" translatable="false">in.onlycashbacks.twa.fileprovider</string>
+    <string name="shortcut_name_0" translatable="false">Home</string>
+    <string name="shortcut_name_1" translatable="false">Offers</string>
+    <string name="shortcut_short_name_0" translatable="false">Home</string>
+    <string name="shortcut_short_name_1" translatable="false">Offers</string>
     <string name="webManifestUrl" translatable="false">https://www.onlycashbacks.in/manifest.json</string>
+    <style name="Theme.Launcher" parent="@android:style/Theme.Translucent.NoTitleBar">
+        
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>

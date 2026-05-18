@@ -6,8 +6,6 @@
     <!-- Value from default config. -->
     <bool name="enableNotification">true</bool>
     <!-- Value from default config. -->
-    <bool name="enableSiteSettingsShortcut">true</bool>
-    <!-- Value from default config. -->
     <color name="backgroundColor">#F5F5F7</color>
     <!-- Value from default config. -->
     <color name="colorPrimary">#F5F5F7</color>
@@ -28,8 +26,6 @@
     <!-- Value from default config. -->
     <string name="fallbackType" translatable="false">webview</string>
     <!-- Value from default config. -->
-    <string name="fullScopeUrl" translatable="false">https://www.onlycashbacks.in/</string>
-    <!-- Value from default config. -->
     <string name="generatorApp" translatable="false">bubblewrap-cli</string>
     <!-- Value from default config. -->
     <string name="hostName" translatable="false">www.onlycashbacks.in</string>
@@ -41,6 +37,14 @@
     <string name="orientation" translatable="false">portrait-primary</string>
     <!-- Value from default config. -->
     <string name="providerAuthority" translatable="false">in.onlycashbacks.twa.fileprovider</string>
+    <!-- Value from default config. -->
+    <string name="shortcut_name_0" translatable="false">Home</string>
+    <!-- Value from default config. -->
+    <string name="shortcut_name_1" translatable="false">Offers</string>
+    <!-- Value from default config. -->
+    <string name="shortcut_short_name_0" translatable="false">Home</string>
+    <!-- Value from default config. -->
+    <string name="shortcut_short_name_1" translatable="false">Offers</string>
     <!-- Value from default config. -->
     <string name="webManifestUrl" translatable="false">https://www.onlycashbacks.in/manifest.json</string>
 
